@@ -1,5 +1,10 @@
+const mongoose = require('mongoose');
 const express = require('express');
 const router = express.Router();
+
+mongoose.connect('mongodb://localhost/project1', {useNewUrlParser: true})
+  .then(() => console.log('Connected to MongoDB...'))
+  .catch( err => console.error('Could not connect to MongoDB...', err));
 
 const genres = [
   { id: 1, name: 'Action' },  
